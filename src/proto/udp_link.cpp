@@ -1,10 +1,7 @@
-#include <synapse_protobuf/nav_sat_fix.pb.h>
 #include <synapse_tinyframe/SynapseTopics.h>
 #include <synapse_tinyframe/utils.h>
 
 #include <synapse_protobuf/actuators.pb.h>
-#include <synapse_protobuf/odometry.pb.h>
-#include <synapse_protobuf/twist.pb.h>
 
 #include <boost/asio/error.hpp>
 #include <boost/system/error_code.hpp>

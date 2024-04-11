@@ -3,7 +3,6 @@
 
 #include <actuator_msgs/msg/actuators.hpp>
 #include <builtin_interfaces/msg/time.hpp>
-#include <geometry_msgs/msg/twist.hpp>
 
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/subscription_options.hpp>
@@ -32,7 +31,6 @@ public:
     void tf_send(int topic, const std::string& data) const;
 
     void publish_status(const synapse::msgs::Status& msg);
-    void publish_uptime(const synapse::msgs::Time& msg);
 
 private:
     std::shared_ptr<TinyFrame> tf_ {};
@@ -50,8 +48,6 @@ private:
 
     // publications cerebri -> ros
     rclcpp::Publisher<synapse_msgs::msg::Status>::SharedPtr pub_status_;
-    rclcpp::Publisher<builtin_interfaces::msg::Time>::SharedPtr pub_uptime_;
-    rclcpp::Publisher<builtin_interfaces::msg::Time>::SharedPtr pub_clock_offset_;
 
     // callbacks
     std::shared_ptr<std::thread> udp_thread_;
